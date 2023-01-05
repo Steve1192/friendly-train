@@ -16,7 +16,7 @@ Did that with a math.random() method. Then I pull a random corresponding player 
 Directions for user:
 Every time this page loads a NBA player from 1979 to today will be generated. Your NBA knowledge is seriously lacking and I know you don't know ball. For current players, you guess the team they're on. For Former players, guess the team they played on the longest. You get 5 guesses. If you submit a 6th incorrect guess the page will reload and a new player will be generated. Keep in mind, spelling counts and the first letter of the team city and team name must be capitalized-- YOU DON'T KNOW BALL !!!
 
-
+Link to my awesome blog on this: https://medium.com/@stevesantner/my-js-final-project-experience-a160a39e57e1
 
 
 FEATURES I WOULD LIKE TO ADD IN THE FUTURE:
