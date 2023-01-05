@@ -22,3 +22,4 @@ Every time this page loads a NBA player from 1979 to today will be generated. Yo
 FEATURES I WOULD LIKE TO ADD IN THE FUTURE:
 I make a score counter on the screen, and post a leaderboard. Wow (lol), I think I literally just developed a great idea while blogging.
 Should fix the case sensitivity*
+I just want to add here that I named this finalproject2 because I screwed up the push to github of finalproject1. This is just a copy of the working code from my original app idea.
