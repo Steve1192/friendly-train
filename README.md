@@ -1,9 +1,10 @@
 JavaScript Phase-1 Final Project Documentation
 
-Directions for user:
-Every time this page loads a NBA player from 1979 to today will be generated. Your NBA knowledge is seriously lacking and I know you don't know ball. For current players, you guess the team they're on. For Former players, guess the team they played on the longest. You get 5 guesses. If you submit a 6th incorrect guess the page will reload and a new player will be generated. Keep in mind, spelling counts and the first letter of the team city and team name must be capitalized-- YOU DON'T KNOW BALL !!!
+The following is a single web page application that pulls data from the balldontlie API located at: https://www.balldontlie.io/#introduction . 
 
-Link to my awesome blog on this: https://medium.com/@stevesantner/my-js-final-project-experience-a160a39e57e1
+The application runs as follows. 100 random NBA players from 1979 to today are fetched using a GET request. The players name is displayed on the page. The user has 5 guesses to determine the team of the listed player. IF it is a former player then the user is supposed to guess the team that player played on most of his career. If it is a current player then the user is supposed to guess the team that he is currently playing on. When the user submits a 6th incorrect guess the page reloads and a new player name is generated.
+
+Link to my blog on this: https://medium.com/@stevesantner/my-js-final-project-experience-a160a39e57e1
 
 
 FEATURES I WOULD LIKE TO ADD IN THE FUTURE:
