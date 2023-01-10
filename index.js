@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderPlayer(players)
     {const renderAPlayer = document.getElementById("rando-player");   
-    players.forEach(guy => {
-      playersArray.push(guy.first_name +' ' + guy.last_name)
-      teamsArray.push(guy.team.city +' ' + guy.team.name)
-    })
+      players.forEach(guy => {
+        playersArray.push(guy.first_name + ' ' + guy.last_name)
+        teamsArray.push(guy.team.city + ' ' + guy.team.name)
+                            })
         const dude = document.createElement('div');  
         dude.innerHTML = playersArray[rando] 
         console.log(playersArray[rando])
