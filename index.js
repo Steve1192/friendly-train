@@ -1,4 +1,4 @@
-//guess my team NBA game
+//guess my team NBA team game
 let playersArray = [];//storing all players in an array
 let teamsArray = [];  //storing all CORRESPONDING teams in an array
 let rando = Math.floor(Math.random() * 100);
@@ -14,38 +14,39 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://www.balldontlie.io/api/v1/players?per_page=100')
     .then(resp => resp.json()) //breaks fown json data from API
          .then(players => renderPlayer(players.data));
-         
+        })
+
+
     function renderPlayer(players)
     {//console.log(players) i know this works but its my security blanket, it's the object full of player objects
-        const renderAPlayer = document.getElementById("rando-player");     //SO THIS NEEDS TO BE CHANGED ULTIMATELY TO ONE SINGLE PLAYER SOMWHERE IN HERE
+        const renderAPlayer = document.getElementById("rando-player");   
     players.forEach(guy => {
         
     //coming up with how to store these names in an array for later use
     playersArray.push(guy.first_name +' ' + guy.last_name)
     teamsArray.push(guy.team.city +' ' + guy.team.name)
-
+//SO NOW WE HAVE STORED AN ARRAY OF NBA PLAYERS AND THEIR CORRESPONDING TEAMS
 
     })
         
 
-        const dude = document.createElement('div');  //.create single div for 1 random player off the 100 random NBA players list
-        dude.innerHTML = playersArray[rando] 
+        const dude = document.createElement('div');  
+        dude.innerHTML = playersArray[rando] //the innerHTML of the div is going to be filled with the randomly generated player
         console.log(playersArray[rando])
         console.log(teamsArray[rando])
         renderAPlayer.appendChild(dude);    
-    //SO NOW WE HAVE STORED AN ARRAY OF NBA PLAYERS AND THEIR CORRESPONDING TEAMS
    
     }
-    let i = 0
+
+
+    let i = 0 //initialize counter for number of guesses
     playerGuessesContainer.addEventListener('submit', function(e) {
         e.preventDefault();
       
         
         // use the e.target object to get the value of the input element
-        let playerGuess = e.target.querySelector('input').value;          //I need to work on understanding query selector methods better
-                                                                            //I kmow that 'input' just pulls out the first element that is an input on the page
-        console.log(playerGuess);
-
+        let playerGuess = e.target.querySelector('input').value;        //sets variable of playerGuess
+        //I kmow that 'input' just pulls out the first element that is an input on the page
 
         if (playerGuess == teamsArray[rando])
         {
@@ -62,19 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
             wrongGuess.innerHTML = playerGuess
             guessesContainer.appendChild(wrongGuess)
             if (i == 5)
-            {
+            {     //after 5 wrong guesses display this output message
                 outputMessage.innerHTML = "The team " + playersArray[rando] + " played for most in his career was the " + teamsArray[rando] + ".";
                 }
 
-                else if (i == 6)
-                {
-                    window.location.reload();
-                }
+                else if (i == 6) //reload the page on the 6th guess
+                {window.location.reload();}
 
         }
-e.target.reset();
+e.target.reset(); //reset input field
       });
-    
+
+
+      //quick event listener with built in function to change title from black to red to blue and back for eveery mouseover
       title.addEventListener("mouseover", function() {
         if (title.style.color === "black") {
           
@@ -88,4 +89,4 @@ e.target.reset();
 
       });
 
-    })//end of DOMcontentloaded that kicks the whole thing off
+    //end of DOMcontentloaded that kicks the whole thing off
