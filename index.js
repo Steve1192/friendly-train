@@ -1,4 +1,3 @@
-
 let playersArray = [];
 let teamsArray = [];  
 let rando = Math.floor(Math.random() * 100);
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
          .then(players => renderPlayer(players.data));
         })
 
-
     function renderPlayer(players)
     {const renderAPlayer = document.getElementById("rando-player");   
     players.forEach(guy => {
@@ -28,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         renderAPlayer.appendChild(dude);    
     }
 
-
     
-    playerGuessesContainer.addEventListener('submit', function(e) {
+    playerGuessesContainer.addEventListener('submit', function(e) 
+    {
         e.preventDefault();
         let playerGuess = e.target.querySelector('input').value;     
           if (playerGuess == teamsArray[rando])
@@ -42,28 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
             let wrongGuess = document.createElement('li')
             wrongGuess.innerHTML = playerGuess
             guessesContainer.appendChild(wrongGuess)
-            if (i == 5)
-            {     //after 5 wrong guesses display this output message
-                outputMessage.innerHTML = "The team " + playersArray[rando] + " played for most in his career was the " + teamsArray[rando] + ".";
-                }
+                      if (i == 5)
+                      {outputMessage.innerHTML = "The team " + playersArray[rando] + " played for most in his career was the " + teamsArray[rando] + "."; }
 
-                else if (i == 6) //reload the page on the 6th guess
-                {window.location.reload();}
-
-        }
-      e.target.reset(); //reset input field
-      });
-
-
+                      else if (i == 6) 
+                      {window.location.reload();}
+          }
+        e.target.reset(); 
+    });
       
       title.addEventListener("mouseover", function() {
-        if (title.style.color === "black") {
+          if (title.style.color === "black") 
+          { title.style.color = "red";} 
+
+          else if (title.style.color === "red") 
+          {title.style.color = "blue";} 
           
-          title.style.color = "red";
-        } else if (title.style.color === "red") {
-          title.style.color = "blue";
-          
-        } else {
-          title.style.color = "black";
-        }
+          else {title.style.color = "black";}
       });
