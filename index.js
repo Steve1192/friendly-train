@@ -6,6 +6,7 @@ const guessesContainer = document.getElementById("wrong-guesses");
 const outputMessage = document.getElementById("output message");
 const playerGuessesContainer = document.getElementById("guess-my-team-form");
 const title = document.getElementById("title");
+let i = 0 ;
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('https://www.balldontlie.io/api/v1/players?per_page=100')
@@ -25,30 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(playersArray[rando])
         console.log(teamsArray[rando])
         renderAPlayer.appendChild(dude);    
-   
     }
 
 
-    let i = 0 //initialize counter for number of guesses
+    
     playerGuessesContainer.addEventListener('submit', function(e) {
         e.preventDefault();
-      
+        let playerGuess = e.target.querySelector('input').value;     
+          if (playerGuess == teamsArray[rando])
+          { outputMessage.innerHTML = "YOU GUESSED IT! It was: " + playerGuess }
         
-        // use the e.target object to get the value of the input element
-        let playerGuess = e.target.querySelector('input').value;        //sets variable of playerGuess
-        //I kmow that 'input' just pulls out the first element that is an input on the page
-
-        if (playerGuess == teamsArray[rando])
-        {
-            outputMessage.innerHTML = "YOU GUESSED IT! It was: " + playerGuess
-           // console.log("YOU GUESSED IT!");
-    
-        }
-        
-        else
-        { i ++
+          else
+         { i ++
             outputMessage.innerHTML = "YOU'RE A BAD BASKETBALL FAN"
-            //console.log("YOU'RE A BAD BASKETBALL fFAN");
             let wrongGuess = document.createElement('li')
             wrongGuess.innerHTML = playerGuess
             guessesContainer.appendChild(wrongGuess)
@@ -61,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 {window.location.reload();}
 
         }
-e.target.reset(); //reset input field
+      e.target.reset(); //reset input field
       });
 
 
-      //quick event listener with built in function to change title from black to red to blue and back for eveery mouseover
+      
       title.addEventListener("mouseover", function() {
         if (title.style.color === "black") {
           
@@ -76,7 +66,4 @@ e.target.reset(); //reset input field
         } else {
           title.style.color = "black";
         }
-
       });
-
-    //end of DOMcontentloaded that kicks the whole thing off
