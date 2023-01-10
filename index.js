@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.reset(); 
     });
       
-      // title.addEventListener("mouseover", function() {
-      //     if (title.style.color === "black") 
-      //     { title.style.color = "red";} 
+      title.addEventListener("mouseover", function() {
+          if (title.style.color === "black") 
+          { title.style.color = "red";} 
 
-      //     else if (title.style.color === "red") 
-      //     {title.style.color = "blue";} 
+          else if (title.style.color === "red") 
+          {title.style.color = "blue";} 
           
-      //     else {title.style.color = "black";}
-      // });
+          else {title.style.color = "black";}
+      });
