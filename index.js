@@ -1,8 +1,7 @@
-//guess my team NBA team game
-let playersArray = [];//storing all players in an array
-let teamsArray = [];  //storing all CORRESPONDING teams in an array
+
+let playersArray = [];
+let teamsArray = [];  
 let rando = Math.floor(Math.random() * 100);
-//console.log(rando); // Outputs a random integer between 0 and 999
 const guessesContainer = document.getElementById("wrong-guesses");
 const outputMessage = document.getElementById("output message");
 const playerGuessesContainer = document.getElementById("guess-my-team-form");
@@ -10,7 +9,7 @@ const title = document.getElementById("title");
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('https://www.balldontlie.io/api/v1/players?per_page=100')
-    .then(resp => resp.json()) //breaks fown json data from API
+    .then(resp => resp.json()) 
          .then(players => renderPlayer(players.data));
         })
 
@@ -18,15 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderPlayer(players)
     {const renderAPlayer = document.getElementById("rando-player");   
     players.forEach(guy => {
-    playersArray.push(guy.first_name +' ' + guy.last_name)
-    teamsArray.push(guy.team.city +' ' + guy.team.name)
-//SO NOW WE HAVE STORED AN ARRAY OF NBA PLAYERS AND THEIR CORRESPONDING TEAMS
-
+      playersArray.push(guy.first_name +' ' + guy.last_name)
+      teamsArray.push(guy.team.city +' ' + guy.team.name)
     })
-        
-
         const dude = document.createElement('div');  
-        dude.innerHTML = playersArray[rando] //the innerHTML of the div is going to be filled with the randomly generated player
+        dude.innerHTML = playersArray[rando] 
         console.log(playersArray[rando])
         console.log(teamsArray[rando])
         renderAPlayer.appendChild(dude);    
