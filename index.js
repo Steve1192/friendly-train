@@ -9,8 +9,6 @@ const playerGuessesContainer = document.getElementById("guess-my-team-form");
 const title = document.getElementById("title");
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    
     fetch('https://www.balldontlie.io/api/v1/players?per_page=100')
     .then(resp => resp.json()) //breaks fown json data from API
          .then(players => renderPlayer(players.data));
@@ -18,11 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function renderPlayer(players)
-    {//console.log(players) i know this works but its my security blanket, it's the object full of player objects
-        const renderAPlayer = document.getElementById("rando-player");   
+    {const renderAPlayer = document.getElementById("rando-player");   
     players.forEach(guy => {
-        
-    //coming up with how to store these names in an array for later use
     playersArray.push(guy.first_name +' ' + guy.last_name)
     teamsArray.push(guy.team.city +' ' + guy.team.name)
 //SO NOW WE HAVE STORED AN ARRAY OF NBA PLAYERS AND THEIR CORRESPONDING TEAMS
