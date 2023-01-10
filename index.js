@@ -62,10 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
           else {title.style.color = "black";}
       });
 
-renderAPlayer.addEventListener("click", function(e)
-{
-  
-renderAPlayer.style.color = 'orange'
-
-  
-})
+      renderAPlayer.addEventListener("click", function(e)
+      {
+        setInterval(function() {
+          if (renderAPlayer.style.color === "black")
+          {renderAPlayer.style.color = 'orange'}
+          else if (renderAPlayer.style.color === 'orange') {
+          renderAPlayer.style.color = 'black';}
+        }, 1000)
+        renderAPlayer.style.color = 'black'
+      })
