@@ -5,6 +5,7 @@ const guessesContainer = document.getElementById("wrong-guesses");
 const outputMessage = document.getElementById("output message");
 const playerGuessesContainer = document.getElementById("guess-my-team-form");
 const title = document.getElementById("title");
+const renderAPlayer = document.getElementById("rando-player");
 let i = 0 ;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     function renderPlayer(players)
-    {const renderAPlayer = document.getElementById("rando-player");   
+    {   
       players.forEach(guy => {
         playersArray.push(guy.first_name + ' ' + guy.last_name)
         teamsArray.push(guy.team.city + ' ' + guy.team.name)
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(playersArray[rando])
         console.log(teamsArray[rando])
         renderAPlayer.appendChild(dude);    
+        return renderAPlayer;
     }
 
     
@@ -49,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.reset(); 
     });
       
-      title.addEventListener("mouseover", function() {
+      title.addEventListener("mouseover", function() 
+      {
           if (title.style.color === "black") 
           { title.style.color = "red";} 
 
@@ -58,3 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
           
           else {title.style.color = "black";}
       });
+
+renderAPlayer.addEventListener("click", function(e)
+{
+renderAPlayer.style.color = 'purple'
+
+  
+})
