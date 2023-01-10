@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(function() {
           if (renderAPlayer.style.color === "black")
           {renderAPlayer.style.color = 'orange'}
-          else if (renderAPlayer.style.color === 'orange') {
-          renderAPlayer.style.color = 'black';}
-        }, 1000)
-        renderAPlayer.style.color = 'black'
+          else if (renderAPlayer.style.color === 'orange') 
+          {renderAPlayer.style.color = 'black';}
+                                }, 1000)
+        //renderAPlayer.style.color = 'black'
       })
