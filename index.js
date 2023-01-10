@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 renderAPlayer.addEventListener("click", function(e)
 {
-renderAPlayer.style.color = 'purple'
+  
+renderAPlayer.style.color = 'orange'
 
   
 })
