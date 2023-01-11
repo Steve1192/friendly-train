@@ -10,4 +10,3 @@ Link to my blog on this: https://medium.com/@stevesantner/my-js-final-project-ex
 FEATURES I WOULD LIKE TO ADD IN THE FUTURE:
 Score counter on the screen, and post a leaderboard.
 Fix the case sensitivity*.
-

@@ -1,5 +1,4 @@
 body {
-  
   width: 600px; 
   height: 600px; 
   margin : auto;
@@ -8,7 +7,6 @@ body {
   background-position: left , right ;
   background-repeat: repeat-y, repeat-y;
 background-color: lightgrey;
-  
 }
 
   #wrong-guesses {
@@ -23,13 +21,11 @@ font-size: 100px;
 color: rgb(6, 0, 12);
 text-decoration: underline;
 text-decoration-color: orange;
-
   }
 
   #p  {
 font-size: 20px;
 color: rgb(0, 0, 0);
-
 
   }
 
