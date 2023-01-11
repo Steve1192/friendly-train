@@ -9,11 +9,11 @@ const renderAPlayer = document.getElementById("rando-player");
 let i = 0 ;
 let blinking = false;
 
-document.addEventListener('DOMContentLoaded', () => {
+
     fetch('https://www.balldontlie.io/api/v1/players?per_page=100')
     .then(resp => resp.json()) 
          .then(players => renderPlayer(players.data));
-        })
+        
 
     function renderPlayer(players)
     {   
